@@ -6,4 +6,5 @@
  *
  */
 module crime_management {
+	requires java.sql;
 }
