@@ -24,4 +24,11 @@ The Crime Information Management system can help in storing the records related 
   <li>Admin can update criminal information</li>
   <li>Admin can delete criminal</li>
 </ul>
+<hr>
+<h1>Schema</h1>
+![image](https://user-images.githubusercontent.com/61106375/222489297-c6bf1c0a-e7ea-49e7-8a31-22f142d21c70.png)
+<hr>
+<h1>Flow</h1>
+![image](https://user-images.githubusercontent.com/61106375/222489596-886d7006-052f-4ef1-8fe2-d6651733e58f.png)
+
   
