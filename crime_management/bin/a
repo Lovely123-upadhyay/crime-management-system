@@ -1,0 +1,99 @@
+Creating tables
+
+create table crimeinfo(
+Crimeid int primary key auto_increment,
+Cdate datetime,
+Cplace varchar(15),
+Crime_Type varchar(15),
+victim varchar(15),
+description varchar(25),
+suspect varchar(15),
+Status varchar(10) default 'unsolved'
+);
+
+
+
+create table criminal(
+id int primary key auto_increment,
+name varchar(15),
+age int,
+gender char(2),
+address varchar(25),
+identity varchar(15),
+area_of_Crime varchar(15),
+Crime_Type varchar(15),
+CrimeId int,
+foreign key(Crimeid) references crimeinfo(Crimeid) ON DELETE CASCADE ON UPDATE RESTRICT
+);
+
+
+******************************* Crime Dao impl*******************
+
+
+for adding crime in database
+
+insert into criminfo (cdate, cplace, Crime_name, Victims, Description_crime, suspected_name)" + "values (?,?,?,?,?,?)
+
+for viewing list of crimes
+
+select * from criminfo
+
+for getting count of crime or pending or completed cases
+
+select count(*) from criminfo where case_status=?
+
+get the pending no of cases between months
+
+select count(*) from criminfo where cdate between ? AND ?
+
+get the list or crime according to place
+
+select * from criminfo where cplace=?
+
+for updating the crime
+
+update criminfo set case_status=? where crimId=?
+
+
+
+******************* criminal crime dao impl *************************************
+
+
+get the list of criminal info base on crime name
+
+select c.cname, cr.crime_name from criminal c INNER JOIN criminfo cr INNER JOIN "
+					+ "criminal_crime ccr ON ccr.crimId=cr.crimId AND "
+					+ "ccr.cid=c.cid AND cr.crime_name=?
+					
+					
+for adding criminal crime in database
+
+insert into criminal_crime values(?,?)
+
+
+****************************** criminal dao impl *************************
+ 
+ for adding criminal in database
+
+
+ insert into criminal (Cname, Age, Gender, Address, Face_mark, Crime_Area, Crime_Name) "
+							+ "values (?,?,?,?,?,?,?)"
+							
+				
+for viewing list of criminal
+
+select * from criminal
+
+for getting criminal info by criminal id
+
+select * from criminal where Cid=?
+
+for updating criminal based on id
+
+update criminal set Cname=? where Cid=?
+
+for deleting criminal based on id
+
+DELETE FROM criminal WHERE Cid=?
+
+

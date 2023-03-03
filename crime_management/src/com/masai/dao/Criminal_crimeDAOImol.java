@@ -14,6 +14,8 @@ import com.masai.exception.Criminal_InfoException;
 
 public class Criminal_crimeDAOImol implements Criminal_crimeDAO {
 
+	
+//	get the list of criminal info base on crime name
 	@Override
 	public List<Criminal_Info> CrimeFile(String cname) throws Criminal_InfoException {
 		List<Criminal_Info> Criminals_list = new ArrayList<>();
@@ -50,6 +52,7 @@ public class Criminal_crimeDAOImol implements Criminal_crimeDAO {
 	
 	}
 
+//	for adding criminal crime in database
 	@Override
 	public String AddCriminalCrime(int id, int id1) {
 		String res = "not inserted";
