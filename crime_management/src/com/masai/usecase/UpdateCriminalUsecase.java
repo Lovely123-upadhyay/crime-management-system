@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.masai.bean.Criminal_Info;
 import com.masai.dao.CriminalDAO;
-import com.masai.dao.CriminalaDAOImpl;
+import com.masai.dao.CriminalDAOImpl;
 
 
 public class UpdateCriminalUsecase {
@@ -19,7 +19,7 @@ public class UpdateCriminalUsecase {
 		System.out.println("Enter the 2Cid: ");
 		int id=sc.nextInt();
 		
-		CriminalDAO dao=new CriminalaDAOImpl();
+		CriminalDAO dao=new CriminalDAOImpl();
 
 		Criminal_Info criminal=new Criminal_Info();
 		

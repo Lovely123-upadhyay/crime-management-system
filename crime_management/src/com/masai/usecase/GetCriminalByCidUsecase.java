@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.masai.bean.Criminal_Info;
 import com.masai.dao.CriminalDAO;
-import com.masai.dao.CriminalaDAOImpl;
+import com.masai.dao.CriminalDAOImpl;
 import com.masai.exception.Criminal_InfoException;
 
 
@@ -18,7 +18,7 @@ public class GetCriminalByCidUsecase {
 		System.out.println("Enter the Criminal Id");
 		int id=sc.nextInt();
 		
-		CriminalDAO dao=new CriminalaDAOImpl();
+		CriminalDAO dao=new CriminalDAOImpl();
 		
 		try {
 			Criminal_Info criminal=dao.getcriminalByCId(id);

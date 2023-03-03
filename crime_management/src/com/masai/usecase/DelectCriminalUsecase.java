@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import com.masai.bean.Criminal_Info;
 import com.masai.dao.CriminalDAO;
-import com.masai.dao.CriminalaDAOImpl;
+import com.masai.dao.CriminalDAOImpl;
 
 public class DelectCriminalUsecase {
 
@@ -16,7 +16,7 @@ public static void DeleteCriminal() {
 		System.out.println("Enter the Cid: ");
 		int id=sc.nextInt();
 		
-		CriminalDAO dao=new CriminalaDAOImpl();
+		CriminalDAO dao=new CriminalDAOImpl();
 
 		Criminal_Info criminal=new Criminal_Info();
 	

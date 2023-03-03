@@ -14,7 +14,7 @@ import com.masai.utility.DBUtil;
 
 public class CrimeDAOImp implements CrimeDAO{
 
-	
+//	for adding crime 
 	@Override
 	public String AddCrime(Crime_Info crimeInfo) {
 		String res = "Not Insertd ....";
@@ -52,6 +52,7 @@ public class CrimeDAOImp implements CrimeDAO{
 		return res;
 	}
 
+//	view list or crimes
 	@Override
 	public List<Crime_Info> ViewCrime() throws Crime_InfoException {
 		List<Crime_Info> list = new ArrayList<>();
@@ -64,7 +65,7 @@ public class CrimeDAOImp implements CrimeDAO{
 			ResultSet rs= ps.executeQuery();
 			while(rs.next()) {
 			
-				int id= rs.getInt("crimId");
+				int id= rs.getInt("crimeId");
 				String n= rs.getString("cdate");
 				String a= rs.getString("cplace");
 				String g= rs.getString("Crime_name");
@@ -93,6 +94,7 @@ public class CrimeDAOImp implements CrimeDAO{
 	
 	}
 
+//	for getting count of crime or pending or completed cases
 	@Override
 	public int statuscount(String s1) throws Crime_InfoException {
 		
@@ -116,6 +118,8 @@ public class CrimeDAOImp implements CrimeDAO{
 		
 		return count;
 	}
+	
+//	get the pending no of cases between months
 
 	@Override
 	public int Monthcount(String s1, String s2) throws Crime_InfoException {
@@ -142,6 +146,8 @@ public class CrimeDAOImp implements CrimeDAO{
 	
 	return count;
 	}
+	
+//	get the list or crime according to place
 
 	@Override
 	public List<Crime_Info>CrimeArea(String n) throws Crime_InfoException {
@@ -186,13 +192,15 @@ public class CrimeDAOImp implements CrimeDAO{
 
 	}
 	
+//	for updating the crime
+	
 	@Override
 	public String UpdateCrime(Crime_Info crimeInfo) {
 		
 		String res = "Not Updated.";
 		
 		try(Connection conn= DBUtil.provideConnection();) {
-			PreparedStatement ps = conn.prepareStatement("update criminfo set case_status=? where crimId=?");
+			PreparedStatement ps = conn.prepareStatement("update criminfo set case_status=? where crimeId=?");
 				
 			
 			ps.setString(1, crimeInfo.getCase_Status());
@@ -214,16 +222,16 @@ public class CrimeDAOImp implements CrimeDAO{
 	}
 	
 	@Override
-	public String DeleteCrime(Crime_Info crimeInfo) {
+	public String DeleteCrime(int crimeId) {
 		
        String res ="Not Updated....";
 		
 		try(Connection conn= DBUtil.provideConnection();) {
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM criminfo WHERE crimId=?");
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM criminfo WHERE crimeid=?");
 			
 		
-			ps.setInt(1, crimeInfo.getCrimeId());
-			ps.executeUpdate();
+			ps.setInt(1, crimeId);
+			 ps.executeUpdate();
 		
 				res ="Data deleted Successfully";
 			

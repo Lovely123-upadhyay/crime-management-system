@@ -20,7 +20,7 @@ public interface CrimeDAO {
 	public List<Crime_Info> CrimeArea(String s) throws Crime_InfoException;
 	
 	public String UpdateCrime(Crime_Info crimeInfo);
-	public String DeleteCrime(Crime_Info crimeInfo);
+	public String DeleteCrime(int crimeId);
 	
 	
 }

@@ -22,7 +22,7 @@ public class DeleteCrimeUsecase {
 		
 			crime.setCrimeId(id);;
 			
-	        String result= dao.DeleteCrime(crime);
+	        String result= dao.DeleteCrime(id);
 			
 			System.out.println(result);
 

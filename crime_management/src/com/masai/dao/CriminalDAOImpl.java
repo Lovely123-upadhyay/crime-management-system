@@ -12,8 +12,10 @@ import com.masai.bean.Criminal_Info;
 import com.masai.exception.Criminal_InfoException;
 
 
-public class CriminalaDAOImpl  implements CriminalDAO {
+public class CriminalDAOImpl  implements CriminalDAO {
 
+	
+//	for adding criminal in database
 	@Override
 	public String AddCriminal(Criminal_Info criminalInfo) {
 
@@ -49,6 +51,8 @@ public class CriminalaDAOImpl  implements CriminalDAO {
 		
 		return res;
 	}
+	
+//	for viewing list of criminal
 
 	@Override
 	public List<Criminal_Info> ViewCriminal() throws Criminal_InfoException {
@@ -84,7 +88,7 @@ public class CriminalaDAOImpl  implements CriminalDAO {
 			
 			
 			if(Criminals_list.size() == 0)
-				throw new Criminal_InfoException("No Student found..");
+				throw new Criminal_InfoException("No criminal found..");
 			
 			
 			
@@ -92,6 +96,8 @@ public class CriminalaDAOImpl  implements CriminalDAO {
 			return Criminals_list;
 	
 	}
+	
+//	for getting criminal info by criminal id
 
 	@Override
 	public Criminal_Info getcriminalByCId(int Cid) throws Criminal_InfoException {
@@ -137,6 +143,8 @@ try (Connection conn= DBUtil.provideConnection()){
 	
 		return criminal;
 	}
+	
+//	for updating criminal based on id
 
 	@Override
 	public String UpdateCriminal(Criminal_Info criminalInfo) {
@@ -151,7 +159,7 @@ try (Connection conn= DBUtil.provideConnection()){
 			ps.executeUpdate();
 			
 			
-				res="Table Updated Successfully";
+				res="criminal Updated Successfully";
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -163,6 +171,7 @@ try (Connection conn= DBUtil.provideConnection()){
 		return res;
 	}
 
+//	for deleting criminal based on id
 	@Override
 	public String DeleteCriminal(Criminal_Info criminalInfo) {
 		
@@ -175,7 +184,7 @@ try (Connection conn= DBUtil.provideConnection()){
 			ps.setInt(1, criminalInfo.getCid());
 			ps.executeUpdate();
 		
-				res ="Data deleted Successfully";
+				res ="Criminal deleted Successfully";
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

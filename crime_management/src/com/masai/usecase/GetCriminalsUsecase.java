@@ -4,14 +4,14 @@ import java.util.List;
 
 import com.masai.bean.Criminal_Info;
 import com.masai.dao.CriminalDAO;
-import com.masai.dao.CriminalaDAOImpl;
+import com.masai.dao.CriminalDAOImpl;
 import com.masai.exception.Criminal_InfoException;
 
 public class GetCriminalsUsecase {
 
 public static void Criminal() {
 		
-		CriminalDAO dao = new CriminalaDAOImpl();
+		CriminalDAO dao = new CriminalDAOImpl();
 		
 		try {
 		List<Criminal_Info> criminals= dao.ViewCriminal();
