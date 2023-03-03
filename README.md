@@ -30,6 +30,6 @@ The Crime Information Management system can help in storing the records related 
 
 <hr>
 <h1>Flow</h1>
-![image](https://user-images.githubusercontent.com/61106375/222489596-886d7006-052f-4ef1-8fe2-d6651733e58f.png)
+ <img src="https://user-images.githubusercontent.com/61106375/222489596-886d7006-052f-4ef1-8fe2-d6651733e58f.png"> 
 
   
