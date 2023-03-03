@@ -1,29 +1,29 @@
 Creating tables
 
-create table crimeinfo(
+create table criminfo(
 Crimeid int primary key auto_increment,
 Cdate datetime,
 Cplace varchar(15),
-Crime_Type varchar(15),
-victim varchar(15),
-description varchar(25),
-suspect varchar(15),
-Status varchar(10) default 'unsolved'
+Crime_name varchar(15),
+Victims varchar(15),
+Description_crime varchar(25),
+suspected_name varchar(15),
+Case_Status varchar(10) default 'unsolved'
 );
 
 
 
 create table criminal(
-id int primary key auto_increment,
-name varchar(15),
+Cid int primary key auto_increment,
+Cname varchar(15),
 age int,
 gender char(2),
 address varchar(25),
-identity varchar(15),
-area_of_Crime varchar(15),
-Crime_Type varchar(15),
-CrimeId int,
-foreign key(Crimeid) references crimeinfo(Crimeid) ON DELETE CASCADE ON UPDATE RESTRICT
+Face_mark varchar(15),
+Crime_Area varchar(15),
+Crime_Name varchar(15),
+
+foreign key(Cid) references criminfo(Crimeid)
 );
 
 

@@ -88,7 +88,7 @@ public class CriminalDAOImpl  implements CriminalDAO {
 			
 			
 			if(Criminals_list.size() == 0)
-				throw new Criminal_InfoException("No Student found..");
+				throw new Criminal_InfoException("No criminal found..");
 			
 			
 			
@@ -159,7 +159,7 @@ try (Connection conn= DBUtil.provideConnection()){
 			ps.executeUpdate();
 			
 			
-				res="Table Updated Successfully";
+				res="criminal Updated Successfully";
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -184,7 +184,7 @@ try (Connection conn= DBUtil.provideConnection()){
 			ps.setInt(1, criminalInfo.getCid());
 			ps.executeUpdate();
 		
-				res ="Data deleted Successfully";
+				res ="Criminal deleted Successfully";
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

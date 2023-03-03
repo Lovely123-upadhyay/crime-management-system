@@ -65,7 +65,7 @@ public class CrimeDAOImp implements CrimeDAO{
 			ResultSet rs= ps.executeQuery();
 			while(rs.next()) {
 			
-				int id= rs.getInt("crimId");
+				int id= rs.getInt("crimeId");
 				String n= rs.getString("cdate");
 				String a= rs.getString("cplace");
 				String g= rs.getString("Crime_name");
@@ -200,7 +200,7 @@ public class CrimeDAOImp implements CrimeDAO{
 		String res = "Not Updated.";
 		
 		try(Connection conn= DBUtil.provideConnection();) {
-			PreparedStatement ps = conn.prepareStatement("update criminfo set case_status=? where crimId=?");
+			PreparedStatement ps = conn.prepareStatement("update criminfo set case_status=? where crimeId=?");
 				
 			
 			ps.setString(1, crimeInfo.getCase_Status());
@@ -222,16 +222,16 @@ public class CrimeDAOImp implements CrimeDAO{
 	}
 	
 	@Override
-	public String DeleteCrime(Crime_Info crimeInfo) {
+	public String DeleteCrime(int crimeId) {
 		
        String res ="Not Updated....";
 		
 		try(Connection conn= DBUtil.provideConnection();) {
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM criminfo WHERE crimId=?");
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM criminfo WHERE crimeid=?");
 			
 		
-			ps.setInt(1, crimeInfo.getCrimeId());
-			ps.executeUpdate();
+			ps.setInt(1, crimeId);
+			 ps.executeUpdate();
 		
 				res ="Data deleted Successfully";
 			
