@@ -10,19 +10,19 @@ The Crime Information Management system can help in storing the records related 
 <hr>
 <h1>Functionalities</h1>
 <ul>
-  <li>Admin can Add crime</li>
-  <li>Admin can view Crime list</li>
-  <li>Admin can Update crime</li>
-  <li>Admin can delete crime</li>
-  <li>Admin can check how many crime registered between particular dates</li>
-  <li>Admin can view crime accoring to area</li>
-  <li>Admin can get list of criminal with crime name</li>
-  <li>Admin can add  criminal crime</li>
-  <li>Admin can add criminal</li>
-  <li>Admin can view list of criminal</li>
-  <li>Admin can get criminal by criminalId</li>
-  <li>Admin can update criminal information</li>
-  <li>Admin can delete criminal</li>
+  <li>can Add crime</li>
+  <li>can view Crime list</li>
+  <li>can Update crime</li>
+  <li>can delete crime</li>
+  <li>can check how many crime registered between particular dates</li>
+  <li>can view crime accoring to area</li>
+  <lican get list of criminal with crime name</li>
+  <li>can add  criminal crime</li>
+  <li>can add criminal</li>
+  <li>can view list of criminal</li>
+  <li>can get criminal by criminalId</li>
+  <li>can update criminal information</li>
+  <li>can delete criminal</li>
 </ul>
 <hr>
 <h1>Schema</h1>
