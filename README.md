@@ -33,5 +33,13 @@ The Crime Information Management system can help in storing the records related 
 <h1>Flow</h1>
 
  <img src="https://user-images.githubusercontent.com/61106375/222768977-c60362f8-ed59-4665-a07c-1e4d7229890f.png"> 
+<hr>
+<h1>Project Snapshot</h1>
 
+ <img src="https://user-images.githubusercontent.com/61106375/222874334-431d6170-55c0-4292-98f5-343500049741.png"> 
+
+
+  <img src="https://user-images.githubusercontent.com/61106375/222874449-675bc932-d2a3-48aa-9791-87b53670ef4b.png"> 
   
+  
+   <img src="https://user-images.githubusercontent.com/61106375/222874498-2955ad99-5457-424d-b7e6-9a8ee34f7a1f.png"> 
