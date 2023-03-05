@@ -23,6 +23,9 @@ The Crime Information Management system can help in storing the records related 
   <li>can get criminal by criminalId</li>
   <li>can update criminal information</li>
   <li>can delete criminal</li>
+    <li>can delete criminal lis based on age</li>
+      <li>can get crime info based on crime namd and case status</li>
+        <li>can get list of crime info based on crime name</li>
 </ul>
 <hr>
 <h1>Schema</h1>
