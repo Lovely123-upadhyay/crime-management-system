@@ -20,8 +20,12 @@ public interface CrimeDAO {
 	public List<Crime_Info> CrimeArea(String s) throws Crime_InfoException;
 	
 	public String UpdateCrime(Crime_Info crimeInfo);
+	
 	public String DeleteCrime(int crimeId);
 	
+	public List<Crime_Info> getListBaseonCrimeAndStstus(String crime, String satus) throws Crime_InfoException;
+	
+	public List<Crime_Info> CrimeName(String crimeName) throws Crime_InfoException;
 	
 }
 

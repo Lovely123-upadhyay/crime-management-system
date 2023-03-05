@@ -17,6 +17,8 @@ public interface CriminalDAO {
 	
 	public String DeleteCriminal(Criminal_Info criminalInfo);
 	
+	public List<Criminal_Info> ViewCriminalListBasedOnGender(String gender) throws Criminal_InfoException;
 	
+	public List<Criminal_Info> ViewCriminalListBasedOnAge(int age) throws Criminal_InfoException;
 	
 }

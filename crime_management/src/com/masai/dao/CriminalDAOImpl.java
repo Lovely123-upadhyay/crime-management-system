@@ -194,5 +194,91 @@ try (Connection conn= DBUtil.provideConnection()){
 		return res;
 
 	}
+
+	@Override
+	public List<Criminal_Info> ViewCriminalListBasedOnGender(String gender) throws Criminal_InfoException {
+
+		List<Criminal_Info> criminal = new ArrayList<>();
+		
+		try (Connection conn= DBUtil.provideConnection()){
+			
+			PreparedStatement ps= conn.prepareStatement("select * from criminal where Cid=?");
+			
+	          ps.setString(1, gender);
+			ResultSet rs= ps.executeQuery();
+			
+			while(rs.next()) {
+				int id= rs.getInt("CId");
+				String n= rs.getString("Cname");
+				int a= rs.getInt("Age");
+				String g= rs.getString("Gender");
+				String ad= rs.getString("Address");
+				String fm= rs.getString("Face_mark");
+				String  area= rs.getString("Crime_Area");
+				String crn= rs.getString("Crime_Name");
+				
+				
+			Criminal_Info c  = new Criminal_Info(id, n, a, g, ad, fm, area, crn);
+			criminal.add(c);
+				
+				
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+			throw new Criminal_InfoException(e.getMessage());
+			
+			
+		}
+	
+		return criminal;
+	}
+
+//	get all criminals whose age is greater than given input
+	@Override
+	public List<Criminal_Info> ViewCriminalListBasedOnAge(int age) throws Criminal_InfoException {
+	List<Criminal_Info> criminal = new ArrayList<>();
+		
+		try (Connection conn= DBUtil.provideConnection()){
+			
+			PreparedStatement ps= conn.prepareStatement("select * from criminal where age > ?");
+			
+	        ps.setInt(1, age);
+			ResultSet rs= ps.executeQuery();
+			
+			while(rs.next()) {
+				int id= rs.getInt("CId");
+				String n= rs.getString("Cname");
+				int a= rs.getInt("Age");
+				String g= rs.getString("Gender");
+				String ad= rs.getString("Address");
+				String fm= rs.getString("Face_mark");
+				String  area= rs.getString("Crime_Area");
+				String crn= rs.getString("Crime_Name");
+				
+				
+			Criminal_Info c  = new Criminal_Info(id, n, a, g, ad, fm, area, crn);
+			criminal.add(c);
+				
+				
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+			throw new Criminal_InfoException(e.getMessage());
+			
+			
+		}
+	
+		return criminal;
+	}
 		
 }

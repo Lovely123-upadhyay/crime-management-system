@@ -245,6 +245,94 @@ public class CrimeDAOImp implements CrimeDAO{
 	
 	}
 	
+//	get list or crime based on crime type and status
+
+	@Override
+	public List<Crime_Info> getListBaseonCrimeAndStstus(String crime, String satus) throws Crime_InfoException {
+		List<Crime_Info> list = new ArrayList<>();
+
+
+		try(Connection conn= DBUtil.provideConnection();) {
+		
+			PreparedStatement ps = conn.prepareStatement ("select * from criminfo where crime_name = ? and crime_status = ?");
+			
+			 ps.setString(1, crime);
+			 ps.setString(2, satus);
+			
+			ResultSet rs= ps.executeQuery();
+			while(rs.next()) {
+			
+				int id= rs.getInt("crimeId");
+				String n= rs.getString("cdate");
+				String a= rs.getString("cplace");
+				String g= rs.getString("Crime_name");
+				String ad= rs.getString("Victims");
+				String fm= rs.getString("Description_Crime");
+				String  area= rs.getString("suspected_name");
+				String crn= rs.getString("case_Status");
+				
+				
+			Crime_Info cri=new Crime_Info(id, n, a, g, ad, fm, area, crn);
+			
+	        list.add(cri);
+	
+			}
+			} catch (SQLException e) {
+				throw new Crime_InfoException(e.getMessage());
+				
+			}
+			
+			
+			if(list.size() == 0)
+				throw new Crime_InfoException("No crime found..");
+		
+			
+			return list;
+	}
+
+	
+//	get list of crime based on crime name
+	@Override
+	public List<Crime_Info> CrimeName(String crimeName) throws Crime_InfoException {
+	List<Crime_Info> list = new ArrayList<>();
+		
+		try (Connection conn= DBUtil.provideConnection();){
+			PreparedStatement ps = conn.prepareStatement ("select * from criminfo where crime_name=?");
+			
+	          ps.setString(1, crimeName);
+				
+			ResultSet rs= ps.executeQuery();
+			while(rs.next()) {
+				int id= rs.getInt("crimId");
+				String d= rs.getString("cdate");
+				String a= rs.getString("cplace");
+				String g= rs.getString("Crime_name");
+				String ad= rs.getString("Victims");
+				String fm= rs.getString("Description_Crime");
+				String  area= rs.getString("suspected_name");
+				String crn= rs.getString("case_Status");
+				
+				
+			Crime_Info cri=new Crime_Info(id, d, a, g, ad, fm, area, crn);
+		    list.add(cri);
+	    
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+
+		if(list.size() == 0)
+			throw new Crime_InfoException("No crime found..");
+	
+		
+		return list;
+	}
+	
 	}
 	
 	
