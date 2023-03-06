@@ -18,11 +18,9 @@ public static void DeleteCriminal() {
 		
 		CriminalDAO dao=new CriminalDAOImpl();
 
-		Criminal_Info criminal=new Criminal_Info();
 	
-		criminal.setCid(id);
 		
-      String result= dao.DeleteCriminal(criminal);
+      String result= dao.DeleteCriminal(id);
 		
 		System.out.println(result);
 		
