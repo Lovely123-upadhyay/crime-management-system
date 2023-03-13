@@ -27,7 +27,9 @@ public class Main {
 				+ "\n6.Number of crimes recorded in the current month"
 				+ "\n7.Add Crime Wise criminal Record"
 				+ "\n8.View Crime Wise criminal Record"
-				+ "\n9.Exit");
+				+ "\n9.View Crime List based on crime and status"
+				+ "\n10.View Crime List by crime name"
+				+ "\n11.Exit");
 		int Choice=sc.nextInt();
 		switch(Choice) {
 		
@@ -72,6 +74,16 @@ public class Main {
 			break;
 	
 		case 9:
+			System.out.println("View Crime List based on crime and status");
+		  GetCrimeBasesOnCrimeAndStatusUsecase.main();
+			break;
+			
+		case 10:
+			System.out.println("View Crime List by crime name\"");
+		  GetListOfCrimeBasedOnCrimeNameUsecase.main();
+			break;
+			
+		case 11:
 			System.out.println("Thank you for using application !!");
 		    Switch1=false;
 			break;
@@ -95,7 +107,9 @@ public class Main {
 				+ "\n3.Update Criminal Record"
 				+ "\n4.Delete criminal Record"
 				+ "\n5.View all criminal Record"
-				+ "\n6.Exit");
+				+ "\n6.View all criminal Record Based on gender"
+				+ "\n6.View all criminal Record Based on age"
+				+ "\n8.Exit");
 		int Choice=sc.nextInt();
 		switch(Choice) {
 		
@@ -127,6 +141,18 @@ public class Main {
 			break;
 			
 		case 6:
+			System.out.println("View all criminal record based on gender");
+			
+			ViewCriminalListBasedOnGenderUsecase.main();
+			break;
+			
+		case 7:
+			System.out.println("View all criminal record based on age");
+			
+			ViewListOfCriminalBasedOnAgeUsecase.main();
+			break;
+			
+		case 8:
 			System.out.println("Thank you for using application !!");
 			
 			Switch2=false;
