@@ -22,8 +22,8 @@ address varchar(25),
 Face_mark varchar(15),
 Crime_Area varchar(15),
 Crime_Name varchar(15),
-
-foreign key(Cid) references criminfo(Crimeid)
+Crimeid int,
+foreign key(Crimeid) references criminfo(Crimeid)
 );
 
 

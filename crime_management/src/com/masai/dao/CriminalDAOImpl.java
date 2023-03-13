@@ -173,7 +173,7 @@ try (Connection conn= DBUtil.provideConnection()){
 
 //	for deleting criminal based on id
 	@Override
-	public String DeleteCriminal(Criminal_Info criminalInfo) {
+	public String DeleteCriminal(int criminalId) {
 		
        String res = "Not Updated....";
 		
@@ -181,7 +181,7 @@ try (Connection conn= DBUtil.provideConnection()){
 			PreparedStatement ps = conn.prepareStatement("DELETE FROM criminal WHERE Cid=?");
 			
 		
-			ps.setInt(1, criminalInfo.getCid());
+			ps.setInt(1, criminalId);
 			ps.executeUpdate();
 		
 				res ="Criminal deleted Successfully";

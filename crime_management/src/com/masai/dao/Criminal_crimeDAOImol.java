@@ -18,24 +18,30 @@ public class Criminal_crimeDAOImol implements Criminal_crimeDAO {
 //	get the list of criminal info base on crime name
 	@Override
 	public List<Criminal_Info> CrimeFile(String cname) throws Criminal_InfoException {
-		List<Criminal_Info> Criminals_list = new ArrayList<>();
+		List<Criminal_Info> Criminals_list= new ArrayList<>();
 
 
 		try(Connection conn= DBUtil.provideConnection();) {
 		
-			PreparedStatement ps = conn.prepareStatement ("select c.cname, cr.crime_name from criminal c INNER JOIN criminfo cr INNER JOIN "
-					+ "criminal_crime ccr ON ccr.crimId=cr.crimId AND "
-					+ "ccr.cid=c.cid AND cr.crime_name=?");
+			PreparedStatement ps = conn.prepareStatement ("select * from criminal where crime_name = ?");
 			ps.setString(1,cname );
 			ResultSet rs= ps.executeQuery();
 			while(rs.next()) {
 				
-            Criminal_Info cri=new Criminal_Info();
-            
-			cri.setName(rs.getString("cname"));
-			cri.setCrime_Name(rs.getString("Crime_name"));
-     
-	        Criminals_list.add(cri);
+
+				int id= rs.getInt("CId");
+				String n= rs.getString("Cname");
+				int a= rs.getInt("Age");
+				String g= rs.getString("Gender");
+				String ad= rs.getString("Address");
+				String fm= rs.getString("Face_mark");
+				String  area= rs.getString("Crime_Area");
+				String crn= rs.getString("Crime_Name");
+				
+				
+			Criminal_Info cri=new Criminal_Info(id, n, a, g, ad, fm, area, crn);
+			
+			Criminals_list.add(cri);
 	
 			   }
 			
@@ -58,7 +64,7 @@ public class Criminal_crimeDAOImol implements Criminal_crimeDAO {
 		String res = "not inserted";
 		try (Connection con = DBUtil.provideConnection()){
 			
-		PreparedStatement ps =	con.prepareStatement("insert into criminal_crime values(?,?)");
+		PreparedStatement ps =	con.prepareStatement(" update criminal set crimeid = ? where cid = ?");
 		ps.setInt(1, id);
 		ps.setInt(2, id1);
 		
